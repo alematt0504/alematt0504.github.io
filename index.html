@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 1rem;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(to right, #ffffff, #f7f8fa);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #6a11cb;
+        }
+
+        .portfolio {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project {
+            background: #f0f0ff;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .about {
+            padding: 2rem;
+            background: #fef6f0;
+            color: #5a2a00;
+            text-align: center;
+        }
+
+        .contact {
+            padding: 2rem;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            text-align: center;
+            color: white;
+        }
+
+        .contact button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            color: #ff7e5f;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>Alessio Mattiace</div>
+    <nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">Chi sono</a>
+        <a href="#contact">Contattami</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Hi, i'm Alessio</h1>
+    <p>Sviluppatore creativo con passione per il design e il codice.</p>
+</section>
+
+<section id="portfolio" class="portfolio">
+    <div class="project">Progetto 1</div>
+    <div class="project">Progetto 2</div>
+    <div class="project">Progetto 3</div>
+    <div class="project">Progetto 4</div>
+</section>
+
+<section id="about" class="about">
+    <h2>Chi sono</h2>
+    <p>Mi chiamo Alessio, creo esperienze web moderne e intuitive combinando design estetico e sviluppo funzionale.</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contattami</h2>
+    <button>Scrivimi</button>
+</section>
+</body>
+</html>
