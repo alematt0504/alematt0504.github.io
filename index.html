@@ -17,26 +17,44 @@
             background: linear-gradient(to right, #3c1dc5, #77b9ef);
             padding: 1rem 2rem;
             color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .header-container {
             display: flex;
-            font-size: 1.3rem;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            top: 0;
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
         }
 
-        header div{
-            margin-right: auto;
+        .logo {
+            font-size: 1.5rem;
         }
 
-        nav a {
-            margin-left: 1rem;
+        .nav-links{
+            display: flex;
+            margin-right: 3rem;
+        }
+
+        .nav-links a {
+            margin-left: 1.5rem;
             color: white;
+            font-size: 1.1rem;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
+
+        .nav-links a:hover {
+            color: #c8c8c8;
+        }
+
 
         .hero {
             padding: 4rem 2rem;
@@ -132,12 +150,14 @@
 </head>
 <body>
 <header>
-    <div>Alessio Mattiace</div>
-    <nav>
-        <a href="https://....">CV</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact Me</a>
-    </nav>
+    <div class="header-container">
+        <div class="logo">Alessio Mattiace</div>
+        <nav class="nav-links">
+            <a href="https://....">CV</a>
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+    </div>
 </header>
 
 <section class="hero">
