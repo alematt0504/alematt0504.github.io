@@ -66,13 +66,13 @@
 
         .hero h1 {
             font-size: 2.5rem;
-            color: #121ea6;
+            color: #4d1dc3;
         }
 
         .hero p{
             margin-left: 2rem;
             font-size: 1.3rem;
-            color: #121ea6;
+            color: #4d1dc3;
         }
 
         .hero-content {
@@ -113,11 +113,12 @@
         }
 
         .project{
+            text-align: left;
             background: #efefef;
             border-radius: 16px;
             padding: 1rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            color: black;
+            color: #616161;
             flex: 1 1 calc(50% - 1.5rem);
             max-width: calc(50% - 1.5rem);
             box-sizing: border-box;
@@ -149,6 +150,53 @@
 
         .project_content{
             margin-top: 1rem;
+        }
+
+        .project_lang{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .project_lang .lang-py{
+            background: #fff200;
+            border-radius: 10px;
+            padding: 0.5rem;
+            color: #000000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-right: 1rem;
+        }
+
+        .project_lang .lang-owl{
+            background: #95baff;
+            border-radius: 10px;
+            padding: 0.5rem;
+            color: #000000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-right: 1rem;
+        }
+
+        .project_lang .lang-ja{
+            background: #91f389;
+            border-radius: 10px;
+            padding: 0.5rem;
+            color: #000000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-right: 1rem;
+        }
+
+        .project_lang .lang-mat{
+            background: #ffb356;
+            border-radius: 10px;
+            padding: 0.5rem;
+            color: #000000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-right: 1rem;
+        }
+
+        .date {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #000000;
         }
 
         .about {
@@ -225,7 +273,7 @@
     <div class="header-container">
         <div class="logo">Alessio Mattiace</div>
         <nav class="nav-links">
-            <a href="https://....">CV</a>
+            <a href="CV.pdf" target="_blank">CV</a>
             <a href="#about">About_Me</a>
             <a href="#contact">Contacts</a>
         </nav>
@@ -245,42 +293,65 @@
 <h1 class="portfolio_title">CODING PROJECTS</h1>
 <section id="portfolio" class="portfolio">
     <div class="project">
-        <a href="https://esempio.com" target="_self">
+        <a>
             <div class="project_header">MANAGING WAREHOUSE LOGISTICS THROUGH NATURAL LANGUAGE PROCESSING (NLP)</div>
             <img class="project_img" src="IMGs/RAG.jpg" alt="RAG" >
-            <div class="project_content">Ciao...</div>
+            <div class="project_lang">
+                <div class="lang-py">Python</div>
+                <div class="lang-owl">OWL</div>
+            </div>
+            <div class="project_content">Use of a Large Language Model (LLM) to interact with the warehouse Knowledge Base (KB) and, if necessary, modify it. A RAG (Retrieval-Augmented Generation) system is used to enrich the LLM's responses with information from the KB, providing insights into the warehouse status; thanks to specific functions, the KB can also be directly modified through natural language prompts.</div>
+            <div class="date">Dec, 2024</div>
         </a>
     </div>
 
     <div class="project">
-        <a href="https://esempio.com" target="_self">
+        <a>
             <div class="project_header">POLITICAL BLOGS CLASSIFICATION BY GRAPH CONVOLUTIONAL NETWORKS (GCN)</div>
             <img class="project_img" src="IMGs/GCN.jpg" alt="GCN" >
+            <div class="project_lang">
+                <div class="lang-py">Python</div>
+            </div>
             <div class="project_content">Ciao...</div>
+            <div class="date">Jul, 2024</div>
         </a>
     </div>
 
     <div class="project">
-        <a href="https://esempio.com" target="_self">
+        <a>
             <div class="project_header">ONTOLOGY-DRIVEN MACHINE LEARNING TASKS ENHANCING</div>
             <img class="project_img" src="IMGs/onto2vec.png" alt="onto2vec" >
+            <div class="project_lang">
+                <div class="lang-py">Python</div>
+                <div class="lang-owl">OWL</div>
+            </div>
             <div class="project_content">Ciao...</div>
+            <div class="date">Dec, 2024</div>
         </a>
     </div>
 
     <div class="project">
-        <a href="https://esempio.com" target="_self">
+        <a>
             <div class="project_header">LLMs EVALUATION IN PREDICTING JAVA CODE CONFIGURATIONS</div>
             <img class="project_img" src="IMGs/checkstyle.jpg" alt="checkstyle" >
+            <div class="project_lang">
+                <div class="lang-py">Python</div>
+                <div class="lang-ja">Java</div>
+            </div>
             <div class="project_content">Ciao...</div>
+            <div class="date">Jan, 2025</div>
         </a>
     </div>
 
     <div class="project">
-        <a href="https://esempio.com" target="_self">
+        <a>
             <div class="project_header">OLIVE TREE SPECIES RECOGNITION USING MACHINE LEARNING TECHNIQUES</div>
             <img class="project_img" src="IMGs/olive_trees.jpg" alt="olive_trees" >
+            <div class="project_lang">
+                <div class="lang-mat">Matlab</div>
+            </div>
             <div class="project_content">Ciao...</div>
+            <div class="date">May, 2024</div>
         </a>
     </div>
 
