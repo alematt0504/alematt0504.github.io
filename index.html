@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alessio Mattiace Portfolio</title>
+    <title>Alessio Mattiace - Portfolio</title>
     <link rel="icon" href="IMGs/avatar.png" type="image/x-icon">
     <style>
         body {
@@ -44,12 +44,18 @@
         }
 
         .nav-links a {
-            margin-left: 1.5rem;
+            margin-left: 0.8rem;
             color: white;
             font-size: 125%;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links a {
+                font-size: 100%;
+            }
         }
 
         .nav-links a:hover {
@@ -106,6 +112,8 @@
             font-size: 2rem;
             color: #1c008a;
             text-align: center;
+            margin-bottom: 0.2rem;
+            margin-top: 2.5rem;
         }
 
         .project{
@@ -143,7 +151,7 @@
         }
 
         .project_img {
-            width: 90%;
+            width: 100%;
             margin-top: 1rem;
             height: auto;
             border-radius: 16px;
