@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alessio Mattiace Portfolio</title>
-    <link rel="icon" href="avatar.png" type="image/x-icon">
+    <link rel="icon" href="IMGs/avatar.png" type="image/x-icon">
     <style>
         body {
             margin: 0;
@@ -34,7 +34,8 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.84);
         }
 
         .nav-links{
@@ -92,16 +93,19 @@
         }
 
         .portfolio {
-            padding: 2rem;
+            color: #1c008a;
+            text-align: center;
+            padding: 1rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
         }
-
-        .project a{
-            text-decoration: none;
-            color: inherit;
+        .portfolio_title{
+            font-weight: bold;
+            font-size: 2rem;
+            color: #1c008a;
+            text-align: center;
         }
 
         .project{
@@ -122,15 +126,28 @@
             }
         }
 
+        .project a{
+            text-decoration: none;
+            color: inherit;
+        }
+
         .project_header {
             text-decoration: none;
-            background: linear-gradient(to right, #677eda, #bcccfd);
+            background: linear-gradient(to right, #7289e8, #aec0fb);
             border-radius: 16px;
             padding: 1rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             color: white;
             font-weight: bold;
             font-size: 1.1rem;
+        }
+
+        .project_img {
+            width: 70%;
+            margin-top: 1rem;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
         }
 
         .project_content{
@@ -179,7 +196,7 @@
 
 <section class="hero">
     <div class="hero-content">
-        <img src="avatar.png" alt="Avatar Alessio" class="hero-photo">
+        <img src="IMGs/avatar.png" alt="Avatar Alessio" class="hero-photo">
         <div>
             <h1>Hi, i'm Alessio</h1>
             <p>AI developer, studying Data Science. Passionate about ML & Deep Learning.</p>
@@ -187,10 +204,12 @@
     </div>
 </section>
 
+<h1 class="portfolio_title">PROJECTS</h1>
 <section id="portfolio" class="portfolio">
     <div class="project">
         <a href="https://esempio.com" target="_blank">
             <div class="project_header">ONTOLOGY-DRIVEN ML TASKS ENHANCING</div>
+
             <div class="project_content">Ciao...</div>
         </a>
     </div>
@@ -198,6 +217,7 @@
     <div class="project">
         <a href="https://esempio.com" target="_blank">
             <div class="project_header">ONTOLOGY-DRIVEN ML TASKS ENHANCING</div>
+            <img class="project_img" src="IMGs/GCN.jpg" alt="GCN" >
             <div class="project_content">Ciao...</div>
         </a>
     </div>
