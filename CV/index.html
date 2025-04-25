@@ -37,24 +37,6 @@
             color: rgba(255, 255, 255, 0.84);
         }
 
-        .nav-links{
-            display: flex;
-            margin-right: 20%;
-        }
-
-        .nav-links a {
-            color: white;
-            font-size: 125%;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            margin-right: 15%;
-        }
-        .nav-links a:hover {
-            color: #c8c8c8;
-            font-weight: bold;
-        }
-
         .CV_title{
             font-weight: bold;
             font-size: 2rem;
@@ -64,59 +46,36 @@
             margin-top: 2.5rem;
         }
 
-        iframe{
-            margin-top: 2rem;
+        .frame{
+            display: block;
+            border:none;
+            max-width: 900px;
+            min-width:500px;
+            margin: 3rem auto;
         }
 
         .fallback {
             display: none;
             text-align: center;
-            padding: 1rem;
+            margin: 3rem;
+            padding: 2rem;
             background: #f3f3f3;
-            border-radius: 10px;
-            font-size: 1.1rem;
-        }
-
-        .contact {
-            padding: 1rem;
-            background: linear-gradient(to right, #4d1dc5, #84c7ff);
-            text-align: center;
-            color: white;
-        }
-
-        .contact .button {
-            margin-top: 2rem;
-            padding: 0.6rem 1.5rem;
-            font-size: 1rem;
-            text-decoration: none;
-            border: none;
-            border-radius: 8px;
-            background: white;
-            color: #310eae;
-            font-weight: bold;
-            cursor: pointer;
+            border-radius: 16px;
+            font-size: 1.4rem;
         }
 
          @media (max-width: 800px) {
-            .nav-links{
-                margin-right: 20%;
-            }
 
             .logo{
                 font-size: 1.1rem;
             }
 
-            .nav-links a {
-                font-size: 100%;
-                margin-right: 8%;
-            }
-
             .frame{
-                display: none;
+                display: none; !important
             }
 
             .fallback{
-                display: block;
+                display: block; !important
             }
          }
     </style>
@@ -125,9 +84,6 @@
 <header>
     <div class="header-container">
         <div class="logo">Alessio Mattiace</div>
-        <nav class="nav-links">
-            <a href="#contact">Contacts</a>
-        </nav>
     </div>
 </header>
 
@@ -137,16 +93,13 @@
         src="CV.pdf#page=1&zoom=100"
         width="70%"
         height="1200"
-        style="border:none; max-width: 900px; min-width:500px; margin: 0 auto; display: block;">
+        style="">
 </iframe>
 
 <p class="fallback">Download the PDF presentation
- <a href="CV.pdf">HERE</a>
+ <a href="CV.pdf" style="color:#575757; font-weight: bold">HERE</a>
 </p>
 
-<section id="contact" class="contact">
-        <h2>Contacts</h2>
-        <a href="mailto:alessiomattiace@libero.it" class="button">Email</a>
-</section>
 </body>
 </html>
+
