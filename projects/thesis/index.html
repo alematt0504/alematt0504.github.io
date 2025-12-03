@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Project</title>
+    <link rel="icon" href="../../IMGs/avatar.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #4d1dc5, #84c7ff);
+            padding: 1rem 2rem;
+            color: white;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        h1{
+            margin: 2rem;
+            width: 60%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.84);
+        }
+
+        .nav-links{
+            display: flex;
+            margin-right: 20%;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 125%;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            margin-right: 15%;
+        }
+        .nav-links a:hover {
+            color: #c8c8c8;
+            font-weight: bold;
+        }
+
+        .title{
+            display: block;
+            margin: 2rem auto;
+            font-weight: bold;
+            max-width:1100px;
+            font-size: 1.8rem;
+            color: #4d1dc4;
+            text-align: center;
+            margin-bottom: 0.4rem;
+            margin-top: 2.5rem;
+        }
+
+        .explanation{
+            text-align: left;
+            color: #000000;
+            display: block;
+            margin: 2rem auto;
+            width: 60%;
+            max-width:1100px;
+            font-size: 1.1rem;
+        }
+
+        .explanation h3{
+            color: #4d1dc4;
+        }
+
+        .frame{
+            display: block;
+            border:none;
+            max-width: 900px;
+            min-width:500px;
+            margin: 3rem auto;
+        }
+
+        .fallback {
+            display: none;
+            text-align: center;
+            margin: 3rem;
+            padding: 2rem;
+            background: #f3f3f3;
+            border-radius: 16px;
+            font-size: 1.4rem;
+        }
+
+        .contact {
+            padding: 1rem;
+            background: linear-gradient(to right, #4d1dc5, #84c7ff);
+            text-align: center;
+            color: white;
+        }
+
+        .contact .button {
+            margin-top: 2rem;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(155, 168, 255, 0.35);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+            .title{
+                font-size: 1.5rem;
+            }
+
+            .nav-links{
+                margin-right: 20%;
+            }
+
+            .logo{
+                font-size: 1.1rem;
+            }
+
+            .nav-links a {
+                font-size: 100%;
+                margin-right: 8%;
+            }
+
+            .frame{
+                display: none; !important
+            }
+
+            .fallback{
+                display: block; !important
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="../../index.html" class="logo">Alessio Mattiace</a>
+        <nav class="nav-links">
+            <a href="#contact">Contacts</a>
+        </nav>
+    </div>
+</header>
+
+<h1 class="title">DEVELOPMENT OF THE IMAGE ANALYSIS MODULE OF A PERSONAL ASSISTANT WITH KNOWLEDGE-AWARE REASONING CAPABILITES</h1>
+
+<section class="explanation">
+    <p>
+        The project is built around an ambitious goal: creating a personal assistant capable of answering genuinely complex questions about a user’s life by integrating and reasoning over heterogeneous personal data. Traditional assistants can retrieve global knowledge or execute simple commands, but they lack the ability to understand the user’s world as a coherent system. They cannot interpret events, correlate information coming from different sources, or perform multimodal reasoning that requires both structured memory and visual perception. The work presented in this thesis aims to bridge precisely this gap. It proposes an architecture able to organize personal data into a unified and semantically meaningful structure, to retrieve relevant knowledge through graph-based reasoning, and to supplement this knowledge with visual analysis when images contain details essential for answering a question. The objective is to make possible queries that today no assistant can satisfy: questions such as what someone was wearing at a specific event, whether two commitments overlap, or what objects appear inside one’s home.
+    <h3>Methodology:</h3>
+    <p>
+        To achieve this, the system is constructed around three tightly interconnected components. The first is the Personal Knowledge Graph, a dynamic and structured representation of the user’s entire personal universe. Unlike generic knowledge graphs, this one encodes highly individual information: events, photos, documents, contacts, notes, phone calls, and any other element that reflects the user’s life. Structured sources such as alarms or calendar events are converted deterministically into nodes and relations, while unstructured data like images and documents are processed through specialized modules that extract textual descriptions. A large language model then transforms these descriptions into relational triples following a predefined schema, allowing the graph to grow as new data arrives while maintaining internal logical consistency.
+
+        The second core element is a retrieval-augmented generation mechanism specifically adapted to work with graph-structured data. Instead of relying on traditional semantic-similarity search, the system uses GraphRAG to navigate the topology of the personal graph, retrieving contextual subgraphs, multi-hop relationships, and relevant communities of entities. The model is then forced to generate answers using only the evidence extracted from the graph, ensuring grounded and verifiable reasoning. When the required information cannot be derived from text alone, the architecture shifts to its third component: a visual analysis module empowered by a vision-language model. The agent first identifies which images are potentially relevant by using the graph itself as a retrieval engine, and only then performs deep visual reasoning on the selected photos, extracting fine-grained details that complement the knowledge graph.
+    </p>
+    <h3>Results:</h3>
+    <p>
+        The evaluation phase assesses how well this multimodal architecture performs in realistic scenarios. A rigorous testing protocol was defined, simulating a stable user state and constructing two dedicated datasets. The first tested cases in which graph reasoning alone fails and vision is required, while the second evaluated the assistant’s behavior when textual and visual information partially overlap. The results show that the system can successfully answer complex personal questions with a high degree of accuracy, especially when visual cues are present and correctly retrieved. Failures, although limited, typically arise from subtle visual details that the model cannot detect or from images that do not capture the required information. Overall, the project demonstrates that combining structured personal memory, graph-based retrieval, and visual reasoning opens the path to a new generation of deeply personalized assistants capable of operating far beyond the limitations of current tools.    <h3>Report:</h3>
+</section>
+
+<iframe class="frame"
+        src="Master's Thesis.pdf#page=1&zoom=100"
+        width="70%"
+        height="1200">
+</iframe>
+
+<p class="fallback">Open the PDF presentation
+    <a href="Master's Thesis.pdf" style="color:#575757; font-weight: bold">HERE</a>
+</p>
+
+<section id="contact" class="contact">
+    <h2>Contacts</h2>
+    <a href="mailto:alessiomattiace@libero.it" class="button">EMAIL: alessiomattiace@libero.it</a>
+</section>
+</body>
+</html>

@@ -108,18 +108,44 @@
             padding: 1rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 3rem;
             justify-content: center;
             margin-bottom: 2rem;
         }
 
-        .portfolio_title{
+        .thesis_title{
+            padding: 1rem;
+        }
+
+        body h1{
             font-weight: bold;
-            font-size: 2rem;
             color: #4d1dc4;
             text-align: center;
             margin-bottom: 0.4rem;
             margin-top: 2.5rem;
+            font-size: 1.7rem;
+        }
+
+        .thesis-container{
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .thesis{
+            text-align: left;
+            background: #efefef;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            color: #616161;
+            width: 40%;
+            box-sizing: border-box;
+        }
+
+        .thesis a{
+            text-decoration: none;
+            color: inherit;
         }
 
         .project{
@@ -129,8 +155,8 @@
             padding: 1rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             color: #616161;
-            flex: 1 1 calc(50% - 1.5rem);
-            max-width: calc(50% - 1.5rem);
+            flex: 1 1 calc(40% - 1.5rem);
+            max-width: calc(40% - 1.5rem);
             box-sizing: border-box;
         }
 
@@ -265,8 +291,9 @@
                 max-width: 100%;
             }
 
-            .portfolio_title{
-                font-size: 1.7rem;
+            .thesis{
+                flex: 1 1 100%;
+                max-width: 100%;
             }
 
             .hero h1 {
@@ -303,6 +330,21 @@
                 A passionate learner of <b>Machine Learning</b>, advanced <b>Computer Vision</b> techniques, and <b>Natural Language Processing</b>.<br>
                 I aspire to collaborate with professionals to develop state-of-the-art solutions for real-world problems.</p>
         </div>
+    </div>
+</section>
+
+<h1 class="thesis_title">MASTER'S THESIS</h1>
+<section class="thesis-container">
+    <div class="thesis">
+        <a href="projects/thesis/index.html" target="_blank">
+            <div class="project_header">DEVELOPMENT OF THE IMAGE ANALYSIS MODULE OF A PERSONAL ASSISTANT WITH KNOWLEDGE-AWARE REASONING CAPABILITES</div>
+            <img class="project_img" src="IMGs/visualization.jpg" alt="pkg" >
+            <div class="project_lang">
+                <div class="lang-py">Python</div>
+            </div>
+            <div class="project_content">Development of a personal assistant capable of answering complex questions about the user's personal data (e.g., alarms, events, photos, etc.) as well as an image-analysis module for greater visual accuracy. Thanks to Personal Knowleddge Graphs (PKGs), it becomes possible to answer questions such as: “What was I wearing at Kevin’s birthday two years ago?”</div>
+            <div class="date">Oct, 2025</div>
+        </a>
     </div>
 </section>
 

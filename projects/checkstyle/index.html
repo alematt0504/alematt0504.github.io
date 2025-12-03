@@ -25,6 +25,7 @@
 
         h1{
             margin: 2rem;
+            width: 60%;
         }
 
         .header-container {
@@ -77,9 +78,9 @@
             color: #000000;
             display: block;
             margin: 2rem auto;
-            width: 90%;
+            width: 60%;
             max-width:1100px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
 
         .explanation h3{
@@ -165,17 +166,19 @@
 <h1 class="title">LLMs EVALUATION IN PREDICTING JAVA CODE CONFIGURATIONS</h1>
 
 <section class="explanation">
-    <p>The project focuses on designing an intelligent system capable of managing last-mile warehouse operations through a chatbot interface powered by a Large Language Model and a knowledge-graph–based architecture. The core objective is to allow different categories of users—warehouse operators and administrators—to query the warehouse state and perform authorized modifications efficiently and safely. As stated in the introductory sections of the report, the system relies on an OWLLama agent built on Llama 3.1 and connected to a warehouse ontology through the COWL API, enabling both natural-language interaction and semantic manipulation of structured knowledge . This architecture aims to overcome typical limitations of LLMs, such as hallucinations and lack of domain-specific reasoning, by grounding responses in a formalized warehouse model and enabling function-based updates when necessary.</p>
+    <p>
+        This project investigates whether a large language model can correctly infer and generate a Checkstyle configuration file simply by observing the stylistic patterns present in Java source code. The central idea is to determine whether an artificial model, without direct access to a project’s original Checkstyle rules, can reconstruct an equivalent configuration that governs indentation, naming conventions, structural organization, and other stylistic constraints embedded in real repositories. Since Checkstyle is widely used in collaborative software projects to enforce coding standards, automating its configuration represents a compelling challenge in both information retrieval and code-oriented personalization. The study therefore aims to measure how reliably an LLM recognizes latent style patterns and whether it can formalize them into a syntactically correct and semantically meaningful XML structure.    </p>
     <h3>Methodology:</h3>
     <p>
-        The methodology begins with the construction of a detailed ontology reflecting an operational warehouse. The ontology includes classes for vehicles, orders, product types, shelves, and sectors, all interconnected through object and data properties. Visual representations in the document outline how instances relate through properties such as located_in, contains, and has_scheduled, forming a semantic structure on which the system can reason.
-        Building on this ontology, the system implements three core functions to support dynamic warehouse operations: move_products, load_order, and reschedule_order. Each function is represented through decision-tree diagrams that formalize the logical conditions under which an operation succeeds or fails. For example, move_products verifies source availability, compatibility of product types, and capacity constraints before allowing a transfer to occur. Load_order requires checking that shelves provide sufficient product quantities and that orders have not already been loaded, while reschedule_order ensures that reassignment does not exceed vehicle capacity and respects idempotency when the vehicle remains unchanged. These function logics guarantee predictable, explainable behavior and prevent inconsistent updates to the knowledge graph. A knowledge-filtering function additionally restricts sensitive data, such as buyer information or delivery addresses, from operator-level users.
+        To address this objective, the work begins with the construction of a large dataset of GitHub repositories that actively employ Checkstyle. This requires overcoming several technical obstacles, such as API request limits, incomplete or low-quality repositories, and the difficulty of associating detected configuration files with their original projects. Through iterative refinement, a final dataset of hundreds of valid repositories is assembled, each containing a consistent Checkstyle.xml and a set of Java files conforming to it. Once curated, this dataset becomes the foundation for extracting both the ground-truth configurations and the source files that will serve as input to the LLM. An important methodological refinement is the exclusion of files suppressed intentionally by configuration filters, ensuring that the model only analyzes Java files that truly reflect the project’s style rules.
+
+        After retrieving and preparing the Java code, the next stage consists of using an LLM to generate predicted Checkstyle configurations. Prompt engineering plays a critical role here, as the model must be guided to respect the hierarchical structure of Checkstyle, separating global modules from TreeWalker modules and maintaining the correct XML organization. The prompt is progressively improved to reduce structural errors and ensure more consistent predictions. Additional constraints, such as deterministic decoding and token-limit handling, help stabilize output quality and reproducibility.
+
+        With both the true and predicted Checkstyle configurations available, the evaluation framework compares them through a dual strategy. First, a structural comparison assesses how accurately the predicted modules match the true ones, accounting for false positives, false negatives, and true positives. A tailored loss function is developed to reflect the varying difficulty of inferring different modules and to normalize results across projects of diverse sizes. Second, an execution-based evaluation applies both configurations to Java files unseen by the LLM, measuring how many stylistic violations each configuration produces. By analyzing errors per file rather than raw error counts, the assessment becomes robust to differences in repository size.
     </p>
     <h3>Results:</h3>
     <p>
-        The evaluation phase examines the system’s behavior over 53 test queries executed under different user modes. The results table highlights a consistent pattern: when queries required the execution of dynamic functions, the agent performed reliably, achieving near-perfect function-selection and parameter-retrieval scores. Synonymous and intentionally deceptive phrasings were also handled correctly, demonstrating robust grounding in the ontology rather than surface-level linguistic cues. Conversely, static knowledge queries showed more variability. The agent occasionally omitted details or introduced hallucinated information, revealing the intrinsic difficulty LLMs face when generating purely descriptive answers not mediated by explicit function calls. Despite this, the overall semantic accuracy remained strong, and the system successfully met its primary goal: enabling structured, safe interaction with a warehouse knowledge base through natural language.
-        Overall, the results underscore the promise of combining LLMs with ontology-grounded reasoning for operational settings, while also pointing to future enhancements such as ontology expansion, more powerful models, wider query coverage, and automated scoring mechanisms.
-    </p>
+        The results suggest that LLMs can frequently produce syntactically valid Checkstyle files and often replicate project-specific style conventions with surprising accuracy. A substantial portion of generated configurations match the behavior of the true configuration on unseen code, while the rest tend to introduce stricter stylistic constraints rather than incorrect or inconsistent rules. These findings highlight both the promise and the current limitations of automated Checkstyle generation, pointing toward future improvements in prompt design, module inference, and fine-tuning strategies.    </p>
     <h3>Report:</h3>
 </section>
 

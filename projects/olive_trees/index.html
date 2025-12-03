@@ -25,6 +25,7 @@
 
         h1{
             margin: 2rem;
+            width: 60%;
         }
 
         .header-container {
@@ -77,9 +78,9 @@
             color: #000000;
             display: block;
             margin: 2rem auto;
-            width: 90%;
+            width: 60%;
             max-width:1100px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
 
         .explanation h3{
@@ -165,17 +166,17 @@
 <h1 class="title">OLIVE TREE SPECIES RECOGNITION USING MACHINE LEARNING TECHNIQUES</h1>
 
 <section class="explanation">
-    <p>The project focuses on designing an intelligent system capable of managing last-mile warehouse operations through a chatbot interface powered by a Large Language Model and a knowledge-graph–based architecture. The core objective is to allow different categories of users—warehouse operators and administrators—to query the warehouse state and perform authorized modifications efficiently and safely. As stated in the introductory sections of the report, the system relies on an OWLLama agent built on Llama 3.1 and connected to a warehouse ontology through the COWL API, enabling both natural-language interaction and semantic manipulation of structured knowledge . This architecture aims to overcome typical limitations of LLMs, such as hallucinations and lack of domain-specific reasoning, by grounding responses in a formalized warehouse model and enabling function-based updates when necessary.</p>
+    <p>
+        The project explores how satellite imagery, when combined with image processing techniques and machine learning models, can be used to automatically classify tree species, focusing specifically on olive varieties in the Apulian region. The increasing availability of high-resolution multispectral images has opened new opportunities for environmental monitoring, allowing researchers to analyze vegetation with a level of precision that was previously difficult to obtain. In this context, the work aims to build a complete pipeline capable of transforming raw remote-sensing data into meaningful predictions about the identity of thousands of olive trees, demonstrating how computational tools can support biodiversity assessment and sustainable land management.    </p>
     <h3>Methodology:</h3>
     <p>
-        The methodology begins with the construction of a detailed ontology reflecting an operational warehouse. The ontology includes classes for vehicles, orders, product types, shelves, and sectors, all interconnected through object and data properties. Visual representations in the document outline how instances relate through properties such as located_in, contains, and has_scheduled, forming a semantic structure on which the system can reason.
-        Building on this ontology, the system implements three core functions to support dynamic warehouse operations: move_products, load_order, and reschedule_order. Each function is represented through decision-tree diagrams that formalize the logical conditions under which an operation succeeds or fails. For example, move_products verifies source availability, compatibility of product types, and capacity constraints before allowing a transfer to occur. Load_order requires checking that shelves provide sufficient product quantities and that orders have not already been loaded, while reschedule_order ensures that reassignment does not exceed vehicle capacity and respects idempotency when the vehicle remains unchanged. These function logics guarantee predictable, explainable behavior and prevent inconsistent updates to the knowledge graph. A knowledge-filtering function additionally restricts sensitive data, such as buyer information or delivery addresses, from operator-level users.
+        The methodology begins with the construction of a structured and informative dataset. Two multispectral satellite images, each containing forty-seven spectral bands, are combined with binary masks that already segment the tree crowns. Field-collected GPS coordinates and labels describing the cultivar of each tree are imported and transformed into intrinsic image coordinates, enabling the alignment between ground-truth information and pixel-level data. Since manual measurements are prone to inaccuracies, some coordinates do not correspond to visible crowns and must be discarded to preserve dataset quality. Each crown in the segmented mask receives a unique identifier, and for every labeled tree, the corresponding pixels are extracted across all spectral bands. After masking out the background, the pixel values belonging to a single crown are filtered to remove outliers and averaged to produce a unique spectral signature. By repeating this process for all trees, the project obtains a matrix in which each row represents an olive tree and each column corresponds to the mean reflectance in one spectral band. This spectral information is then merged with geographic and cultivar data and exported as a complete dataset ready for classification.
+
+        Once the dataset is prepared, the study evaluates several supervised learning algorithms to determine which model best discriminates between olive varieties. Support Vector Machines, Random Forests, and multiple variants of Linear Discriminant Analysis are implemented after standard preprocessing steps that include normalization and an 80–20 train-test split with stratification. The models are trained exclusively on the spectral signatures extracted from the images, making classification depend entirely on the crowns’ reflectance characteristics. Each algorithm is assessed through accuracy and class-specific precision, recall, and F1-scores, supported by confusion matrices that reveal how frequently models mix up the different cultivars.
     </p>
     <h3>Results:</h3>
     <p>
-        The evaluation phase examines the system’s behavior over 53 test queries executed under different user modes. The results table highlights a consistent pattern: when queries required the execution of dynamic functions, the agent performed reliably, achieving near-perfect function-selection and parameter-retrieval scores. Synonymous and intentionally deceptive phrasings were also handled correctly, demonstrating robust grounding in the ontology rather than surface-level linguistic cues. Conversely, static knowledge queries showed more variability. The agent occasionally omitted details or introduced hallucinated information, revealing the intrinsic difficulty LLMs face when generating purely descriptive answers not mediated by explicit function calls. Despite this, the overall semantic accuracy remained strong, and the system successfully met its primary goal: enabling structured, safe interaction with a warehouse knowledge base through natural language.
-        Overall, the results underscore the promise of combining LLMs with ontology-grounded reasoning for operational settings, while also pointing to future enhancements such as ontology expansion, more powerful models, wider query coverage, and automated scoring mechanisms.
-    </p>
+        The results show that linear SVM and LDA with a linear discriminant perform the best, each reaching accuracy values close to seventy percent. These models manage to correctly classify most instances of the dominant cultivars, although rarer classes remain more challenging due to limited representation in the test set. Random Forests achieve slightly lower performance, around sixty percent accuracy, while the SVM with Gaussian kernel proves the least effective, consistently misclassifying nearly all samples except those belonging to a single abundant variety. Overall, the findings demonstrate that spectral information alone provides a meaningful basis for differentiating olive species and that linear decision boundaries, rather than more complex nonlinear strategies, capture these differences most effectively.    </p>
     <h3>Report:</h3>
 </section>
 
