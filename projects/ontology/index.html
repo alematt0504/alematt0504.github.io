@@ -74,12 +74,16 @@
 
         .explanation{
             text-align: left;
-            color: #dd00ff;
+            color: #000000;
             display: block;
             margin: 2rem auto;
             width: 90%;
             max-width:1100px;
             font-size: 1.3rem;
+        }
+
+        .explanation h3{
+            color: #4d1dc4;
         }
 
         .frame{
@@ -160,7 +164,20 @@
 
 <h1 class="title">ONTOLOGY-DRIVEN MACHINE LEARNING TASKS ENHANCING</h1>
 
-<p class="explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section class="explanation">
+    <p>The project focuses on designing an intelligent system capable of managing last-mile warehouse operations through a chatbot interface powered by a Large Language Model and a knowledge-graph–based architecture. The core objective is to allow different categories of users—warehouse operators and administrators—to query the warehouse state and perform authorized modifications efficiently and safely. As stated in the introductory sections of the report, the system relies on an OWLLama agent built on Llama 3.1 and connected to a warehouse ontology through the COWL API, enabling both natural-language interaction and semantic manipulation of structured knowledge . This architecture aims to overcome typical limitations of LLMs, such as hallucinations and lack of domain-specific reasoning, by grounding responses in a formalized warehouse model and enabling function-based updates when necessary.</p>
+    <h3>Methodology:</h3>
+    <p>
+        The methodology begins with the construction of a detailed ontology reflecting an operational warehouse. The ontology includes classes for vehicles, orders, product types, shelves, and sectors, all interconnected through object and data properties. Visual representations in the document outline how instances relate through properties such as located_in, contains, and has_scheduled, forming a semantic structure on which the system can reason.
+        Building on this ontology, the system implements three core functions to support dynamic warehouse operations: move_products, load_order, and reschedule_order. Each function is represented through decision-tree diagrams that formalize the logical conditions under which an operation succeeds or fails. For example, move_products verifies source availability, compatibility of product types, and capacity constraints before allowing a transfer to occur. Load_order requires checking that shelves provide sufficient product quantities and that orders have not already been loaded, while reschedule_order ensures that reassignment does not exceed vehicle capacity and respects idempotency when the vehicle remains unchanged. These function logics guarantee predictable, explainable behavior and prevent inconsistent updates to the knowledge graph. A knowledge-filtering function additionally restricts sensitive data, such as buyer information or delivery addresses, from operator-level users.
+    </p>
+    <h3>Results:</h3>
+    <p>
+        The evaluation phase examines the system’s behavior over 53 test queries executed under different user modes. The results table highlights a consistent pattern: when queries required the execution of dynamic functions, the agent performed reliably, achieving near-perfect function-selection and parameter-retrieval scores. Synonymous and intentionally deceptive phrasings were also handled correctly, demonstrating robust grounding in the ontology rather than surface-level linguistic cues. Conversely, static knowledge queries showed more variability. The agent occasionally omitted details or introduced hallucinated information, revealing the intrinsic difficulty LLMs face when generating purely descriptive answers not mediated by explicit function calls. Despite this, the overall semantic accuracy remained strong, and the system successfully met its primary goal: enabling structured, safe interaction with a warehouse knowledge base through natural language.
+        Overall, the results underscore the promise of combining LLMs with ontology-grounded reasoning for operational settings, while also pointing to future enhancements such as ontology expansion, more powerful models, wider query coverage, and automated scoring mechanisms.
+    </p>
+    <h3>Report:</h3>
+</section>
 
 <iframe class="frame"
         src="ONTOLOGY_ML.pdf#page=1&zoom=100"
