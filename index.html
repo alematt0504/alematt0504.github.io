@@ -155,8 +155,8 @@
             padding: 1rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             color: #616161;
-            flex: 1 1 calc(40% - 1.5rem);
-            max-width: calc(40% - 1.5rem);
+            flex: 1 1 calc(30% - 1.5rem);
+            max-width: calc(30% - 1.5rem);
             box-sizing: border-box;
         }
 
@@ -173,7 +173,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             color: white;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .project_img {
@@ -186,6 +186,7 @@
 
         .project_content{
             margin-top: 1rem;
+            font-size: 0.9rem;
         }
 
         .project_lang{
@@ -287,13 +288,26 @@
             }
 
             .project {
-                flex: 1 1 100%;
+                flex: 1 1 40%;
                 max-width: 100%;
+                padding: 0.4rem;
+            }
+
+            .project_content{
+                font-size: 0.9rem;
+            }
+
+            .project_header{
+                font-size: 0.9rem;
+            }
+
+            .portfolio{
+                gap: 1rem;
             }
 
             .thesis{
                 flex: 1 1 100%;
-                max-width: 100%;
+                max-width: 70%;
             }
 
             .hero h1 {
@@ -372,7 +386,7 @@
                 <div class="lang-py">Python</div>
                 <div class="lang-owl">OWL</div>
             </div>
-            <div class="project_content">Use of a Large Language Model (LLM) to interact with the warehouse Knowledge Base (KB) and, if necessary, modify it. A RAG (Retrieval-Augmented Generation) system is used to enrich the LLM's responses with information from the KB, providing insights into the warehouse status; thanks to specific functions, the KB can also be directly modified through natural language prompts.</div>
+            <div class="project_content">A Large Language Model (LLM) interacts with the warehouse Knowledge Base (KB) using a Retrieval-Augmented Generation (RAG) system to provide context-rich insights on warehouse status. The system can also update the KB directly through natural-language commands.</div>
             <div class="date">Dec, 2024</div>
         </a>
     </div>
@@ -384,8 +398,7 @@
             <div class="project_lang">
                 <div class="lang-py">Python</div>
             </div>
-            <div class="project_content">Use of Graph Convolutional Networks for classifying a political post as either conservative or liberal, based on its textual content and the network of posts it is connected to via hyperlinks.
-Mini-LM was also used to summarize the post’s textual content, and BERT was employed for its encoding.</div>
+            <div class="project_content">A graph-based classifier uses GCNs to label political posts as conservative or liberal by combining their text and hyperlink network structure. The text is first summarized with Mini-LM and then encoded with BERT for use in the model.</div>
             <div class="date">Jul, 2024</div>
         </a>
     </div>
@@ -398,9 +411,7 @@ Mini-LM was also used to summarize the post’s textual content, and BERT was em
                 <div class="lang-py">Python</div>
                 <div class="lang-owl">OWL</div>
             </div>
-            <div class="project_content">Enhancement of a dataset used for a generic Machine Learning task to improve its performance and metrics.
-First, an automatic mapping of the dataset information into a well-formed ontology (complying with specific standards) is performed. Then, SWRL rule inference is applied to deduce new information.
-Finally, for each row in the dataset (considered as an individual in the ontology), the embedding generated via the Node2Vec model is obtained and concatenated.</div>
+            <div class="project_content">The process enhances a Machine Learning dataset through three steps: automatic mapping to a structured ontology, SWRL rule inference for knowledge deduction, and concatenation with Node2Vec embeddings derived from the ontology structure.</div>
             <div class="date">Dec, 2024</div>
         </a>
     </div>
@@ -413,9 +424,7 @@ Finally, for each row in the dataset (considered as an individual in the ontolog
                 <div class="lang-py">Python</div>
                 <div class="lang-ja">Java</div>
             </div>
-            <div class="project_content">checkstyle.xml is a configuration file used to ensure that a Java codebase adheres to specific style rules.
-We designed an architecture to evaluate whether a Large Language Model (LLM) is capable of generating a valid checkstyle file by observing only a Java code snippet provided as input through a prompt.
-A function was implemented to correctly penalize the incorrect modules predicted by the LLM.</div>
+            <div class="project_content">Your project evaluates whether an LLM can generate a valid checkstyle.xml configuration solely from a given Java code snippet. The system’s architecture analyzes the model’s output and includes a scoring function that penalizes any incorrectly predicted Checkstyle modules.</div>
             <div class="date">Jan, 2025</div>
         </a>
     </div>
@@ -427,8 +436,7 @@ A function was implemented to correctly penalize the incorrect modules predicted
             <div class="project_lang">
                 <div class="lang-mat">Matlab</div>
             </div>
-            <div class="project_content">Use of Machine Learning algorithms to accurately classify different types of olive trees from 47-band hyperspectral satellite images.
-A segmentation mask was used to separate the tree canopies from the ground. Then, for each canopy, the average spectral signature was computed. The resulting data enabled us to classify each individual tree using algorithms such as Random Forest and Singular Value Decomposition.</div>
+            <div class="project_content">Machine Learning is used to accurately classify different olive tree types from 47-band hyperspectral satellite images. The method involves segmenting canopies, computing their average spectral signature, and applying algorithms like Random Forest for classification.</div>
             <div class="date">May, 2024</div>
         </a>
     </div>
